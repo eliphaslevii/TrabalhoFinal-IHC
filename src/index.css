@@ -1,0 +1,189 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 20% 97%;
+    --foreground: 220 30% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 10%;
+
+    --primary: 220 90% 50%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 220 20% 92%;
+    --secondary-foreground: 220 30% 20%;
+
+    --muted: 220 15% 90%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 45 100% 50%;
+    --accent-foreground: 220 30% 10%;
+
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 150 70% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 35 100% 50%;
+    --warning-foreground: 0 0% 100%;
+
+    --info: 220 90% 55%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 220 20% 88%;
+    --input: 220 20% 88%;
+    --ring: 220 90% 50%;
+
+    --radius: 1rem;
+
+    /* Autism awareness colors */
+    --autism-gold: 45 100% 50%;
+    --autism-rainbow-1: 0 80% 60%;
+    --autism-rainbow-2: 35 100% 55%;
+    --autism-rainbow-3: 55 90% 50%;
+    --autism-rainbow-4: 150 70% 45%;
+    --autism-rainbow-5: 220 80% 55%;
+    --autism-rainbow-6: 280 70% 55%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .high-contrast {
+    --background: 0 0% 0%;
+    --foreground: 60 100% 50%;
+
+    --card: 0 0% 5%;
+    --card-foreground: 60 100% 50%;
+
+    --popover: 0 0% 5%;
+    --popover-foreground: 60 100% 50%;
+
+    --primary: 60 100% 50%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 60 100% 50%;
+
+    --muted: 0 0% 20%;
+    --muted-foreground: 60 80% 70%;
+
+    --accent: 60 100% 50%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 100% 60%;
+    --destructive-foreground: 0 0% 0%;
+
+    --success: 120 100% 50%;
+    --success-foreground: 0 0% 0%;
+
+    --warning: 45 100% 50%;
+    --warning-foreground: 0 0% 0%;
+
+    --info: 200 100% 60%;
+    --info-foreground: 0 0% 0%;
+
+    --border: 60 100% 50%;
+    --input: 0 0% 20%;
+    --ring: 60 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-nunito;
+  }
+}
+
+@layer utilities {
+  .font-nunito {
+    font-family: 'Nunito', sans-serif;
+  }
+}
+
+/* Loading animations */
+@keyframes pulse-glow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+@keyframes spin-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes rainbow-shift {
+  0% { color: hsl(0 80% 60%); }
+  16% { color: hsl(35 100% 55%); }
+  33% { color: hsl(55 90% 50%); }
+  50% { color: hsl(150 70% 45%); }
+  66% { color: hsl(220 80% 55%); }
+  83% { color: hsl(280 70% 55%); }
+  100% { color: hsl(0 80% 60%); }
+}
+
+.animate-pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+.animate-spin-slow {
+  animation: spin-slow 8s linear infinite;
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+.animate-rainbow {
+  animation: rainbow-shift 4s linear infinite;
+}
+
+.animation-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animation-delay-400 {
+  animation-delay: 400ms;
+}
+
+.animation-delay-600 {
+  animation-delay: 600ms;
+}
